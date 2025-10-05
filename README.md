@@ -1,6 +1,10 @@
-# List of Tests done
 
-## 01_model.ipynb
+This repository contains various tests done for reduced order modelling of actuated flows using Dynamic Mode Decomposition with Control. The model fitting is tested on a simple flow across a cylinder simulation with rotation of the cylinder as the actuation. The models are built using the `pydmd` package. The description of various tests done is given below. 
+
+
+## List of Tests done
+
+### 01_model.ipynb
 
 Purpose & Observations:
 
@@ -23,7 +27,7 @@ Conclusion & Next steps:
 
 The results show very good accuracy for reconstruction and prediction at the same frequency, but when tested for the unforced case the error increases. Moreover, the dynamics of the system needs to be studies that is the A & B operators and their effects need to be studied individually as their effects are not evindent in these results.
 
-## 02_dynamics_compare.ipynb
+### 02_dynamics_compare.ipynb
 
 Purposes & Observations:
 
@@ -33,7 +37,7 @@ Conclusion & Next steps:
 
 The Eigenvalues and mode shapes are of both the DMD and DMDc seems to be same. This is interesting and may be attributed to the fact that the forcing frequency is sinusoidal in nature and the DMD operator is able capture this. There are several changes to be made in the notebook like make making the plots side by side for comparison and choosing right timestep for frequency (as it is currently scaled with timestep of value 1.0), these changes are made in the further notebooks.
 
-## 03_dmdc_model_predict.ipynb
+### 03_dmdc_model_predict.ipynb
 
 Purposes & Observations:
 
@@ -43,7 +47,7 @@ Conclusion and Next steps:
 
 The prediction accuracy for the non-synchronisation is relatively low, which is seen from the contour plots and the L2 error which oscillates in time between 0.2 to 0.7. The absolutes values in B matrix is very low as seen from the "B matrix" plot, this suggests that the influence of the B operator is very low to the overall prediction results.
 
-## 04_dynamics_compare_synchronisation.ipynb
+### 04_dynamics_compare_synchronisation.ipynb
 
 Purposes & Observations:
 
@@ -53,7 +57,7 @@ Conclusion & Next Steps:
 
 The DMD model performs much better than the DMDc model, which is seen from the prediction and reconstruction error v/s rank  plots. This result is surprising as DMDc model has more degree of freedoms to capture the model better. From the mode shapes and domninant frequencies of DMD model it is observed that it is able to capture the forcing frequency of 3 Hz and also it's harmonics. Same is the case with DMDc model. The eignevalues for both DMD and DMDc models are mostly the same except one wheich is decaying in case of DMDc model and oscillatory in case of DMD model.
 
-## 05_dynamics_compare_no_synchronisation.ipynb
+### 05_dynamics_compare_no_synchronisation.ipynb
 
 Purposes & Observations:
 
@@ -63,7 +67,7 @@ Conclusion & Next Steps:
 
 The DMDc model performs same than the DMD model, which is seen from the prediction and reconstruction error v/s rank  plots. This result is surprising as DMDc model has more degree of freedoms to capture the model better. From the mode shapes and domninant frequencies of DMD model it is observed that it is able to capture the forcing frequency of 1.5 Hz and also it's harmonics as well as the natural frequency of flow. Same is the case with DMDc model. The eignevalues for both DMD and DMDc models are mostly the same except one wheich is decaying in case of DMDc model and oscillatory in case of DMD model.
 
-## 06_dynamics_compare_linear_forcing_signal.ipynb
+### 06_dynamics_compare_linear_forcing_signal.ipynb
 
 Purposes & Observations:
 
@@ -91,7 +95,7 @@ Conclusion & Next Steps:
 
 The DMDc model performs similar than the DMD model, which is seen from the prediction and reconstruction error v/s rank  plots. From the mode shapes and domninant frequencies of DMD model it is observed that it is still able to capture the forcing frequency of 1.5 Hz and also it's harmonics as well as the natural frequency of flow. Same is the case with DMDc model. The eignevalues for both DMD and DMDc models are mostly the same except one wheich is decaying in case of DMDc model and oscillatory in case of DMD model.
 
-## 07_dynamics_compare_linear_increasing_forcing.ipynb
+### 07_dynamics_compare_linear_increasing_forcing.ipynb
 
 Purposes & Observations:
 
@@ -115,7 +119,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMD & DMDc models perform poorly but the DMDc a sligthly better, which is seen from the prediction and reconstruction error v/s rank  plots.
 Both the DMD and DMDc models capture different frequency modes and shapes. The DMDc models has quite a few exploding eigenvalues (value>1). Seems like the B matrix has much more of an influence with larger values compared to previous tests.
 
-## 08_dynamics_compare_random_signal.ipynb
+### 08_dynamics_compare_random_signal.ipynb
 
 Purposes & Observations:
 
@@ -139,7 +143,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMD & DMDc models perform poorly and the DMDc diverges for a few ranks between 28 to 35, which is seen from the prediction and reconstruction error v/s rank  plots.
 Both the DMD and DMDc models capture similar frequency modes and shapes. The values in the B matrix are small and influence is much smaller compared to previous tests.
 
-## 09_dynamics_compare_switch_signal.ipynb
+### 09_dynamics_compare_switch_signal.ipynb
 
 Purposes & Observations:
 
@@ -163,7 +167,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMD & DMDc models perform similarly and poorly with high errors, which is seen from the prediction and reconstruction error v/s rank  plots.
 Both the DMD and DMDc models capture similar frequency modes and shapes. The values in the B matrix are small and influence is much smaller compared to previous tests. The DMD operator has an exploding eigenvalue and the DMDc operator has only decaying and oscillating eigenvalues.
 
-## 10_dynamics_compare_freq_ampl_modulation.ipynb
+### 10_dynamics_compare_freq_ampl_modulation.ipynb
 
 Purposes & Observations:
 
@@ -187,7 +191,7 @@ Conclusion & Next Steps:
 Here, it is seens that both DMD & DMDc models perform similarly and poorly with high errors, which is seen from the prediction and reconstruction error v/s rank  plots.
 Both the DMD and DMDc models capture similar frequency modes and shapes. The values in the B matrix are small and influence is much smaller compared to previous tests.
 
-## 11_dynamics_compare_inlet_velocity_switch_signal.ipynb
+### 11_dynamics_compare_inlet_velocity_switch_signal.ipynb
 
 Purposes & Observations:
 
@@ -219,7 +223,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMD & DMDc models perform similarly and poorly with high errors, which is seen from the prediction and reconstruction error v/s rank  plots.
 DMDc model has quite a few exploding eigenvalues.
 
-## 12_dynamics_compare_inlet_freq_ampl_mod.ipynb
+### 12_dynamics_compare_inlet_freq_ampl_mod.ipynb
 
 Purposes & Observations:
 
@@ -252,7 +256,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMD & DMDc models perform similarly and poorly with high errors, which is seen from the prediction and reconstruction error v/s rank  plots.
 DMD model has quite a few exploding eigenvaues. The values in the B matrix are small and influence is much smaller compared to previous tests.
 
-## 13_dynamics_compare_inlet_ramp.ipynb
+### 13_dynamics_compare_inlet_ramp.ipynb
 
 Purposes & Observations:
 
@@ -284,7 +288,7 @@ Conclusion & Next Steps:
 Here, it is seen that both DMDc models perform and poorly compared to DMD model with high errors, which is seen from the prediction and reconstruction error v/s rank  plots.
 DMD and DMDc models have quite a few exploding eigenvaues. The values in the B matrix are small and influence is much smaller compared to previous tests.
 
-## 14_dynamics_compare_extended_state_vector.ipynb
+### 14_dynamics_compare_extended_state_vector.ipynb
 
 Purposes & Observations:
 
@@ -294,7 +298,7 @@ Conclusion & Next Steps:
 
 It is observed that the DMDc model performs slightly better when only Velocity is considered in the state vector. When the extended state vector also includes the pressure, the DMD model performs better in terms of reconstruction error.
 
-## 15_dynamics_compare_including_noise.ipynb
+### 15_dynamics_compare_including_noise.ipynb
 
 Purposes & Observations:
 
